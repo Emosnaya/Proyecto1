@@ -1,3 +1,4 @@
+from random import randint
 import numpy as np
 
 def bubbleSort(A):
@@ -11,7 +12,10 @@ def bubbleSort(A):
                 A[j] = A[j + 1]
                 A[j + 1] = aux
         
-A = np.random.randint(-1000,1000, size=(20)) 
+A = []
+for i in range(200):
+    A.append(randint(-1000,1001))
+
 print(A)
 bubbleSort(A)
 print(A)

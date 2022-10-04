@@ -1,4 +1,4 @@
-import numpy as np
+from random import randint
 
 def heapify(arr, n, i):
 	largest = i # Initialize largest as root
@@ -39,7 +39,10 @@ def heapSort(arr):
 
 
 # Driver code
-arr = np.random.randint(-1000,1000, size=(100))
+arr = []
+for i in range(200):
+    arr.append(randint(-1000,1001))
+
 heapSort(arr)
 n = len(arr)
 print("Sorted array is")

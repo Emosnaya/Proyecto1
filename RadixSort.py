@@ -1,5 +1,5 @@
-import numpy as np
 import time
+from random import randint
 #Funcion CountingSort
 def countingSort(arr, exp1):
 
@@ -141,7 +141,9 @@ def negativos(contador):
 #arr = [170, 45, 75, 90, 802, 24, 2, 66]
 #Arreglo propuesto para su verificacion con los negativos
 #arr = [432, -543, 213, 0, -432, 423, 54, -324, 23, 54, -5, -65, 99, -130]
-arr = np.random.randint(-1000,1000, size=(100)) 
+arr = []
+for i in range(200):
+    arr.append(randint(-1000,1001))
 start = time.time()
 #Se llama a la funcion RadixSort
 radixSort(arr)

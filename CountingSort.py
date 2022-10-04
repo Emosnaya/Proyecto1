@@ -1,4 +1,4 @@
-import numpy as np
+from random import randint
 
 # Counting sort (Código Original) 
 def CreaLista(k): #Esta función crea una lista de apoyo
@@ -22,7 +22,9 @@ def CountingSort(A,k): # A es la lista y k es el valor máximo de la lista
     return B #Retorna el la lista de apoyo B la cual es la que está ordenada
     
 #A=[9,-1,21,4,0,-3,-2,40,10,35] #lista propuesta por la práctica
-A = np.random.randint(-1000,1000, size=(20)) 
+A = []
+for i in range(200):
+    A.append(randint(-1000,1001))
 N=[]
 P=[]
 LO=[]

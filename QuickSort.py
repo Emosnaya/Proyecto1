@@ -1,4 +1,4 @@
-import numpy as np
+from random import randint
 
 def intercambia(A,x,y):
     tmp=A[x]
@@ -20,7 +20,9 @@ def Quicksort(A,p,r):
         Quicksort(A,q+1,r)
 
 
-A=np.random.randint(-1000,1000, size=(100))
+A = []
+for i in range(200):
+    A.append(randint(-1000,1001))
 Quicksort(A,0,len(A)-1) 
 print("Arreglo ordenado")
 print(A)
