@@ -1,4 +1,5 @@
 from random import randint
+import time
 import numpy as np
 
 def bubbleSort(A):
@@ -13,9 +14,15 @@ def bubbleSort(A):
                 A[j + 1] = aux
         
 A = []
-for i in range(200):
+for i in range(500):
     A.append(randint(-1000,1001))
 
+start = time.time()
+print("ARREGLO DESORNDENADO")
 print(A)
 bubbleSort(A)
+end = time.time()
+print("ARREGLO ORDENADO")
 print(A)
+print()
+print(f'El tiempo de ejecucio es {end-start}')
