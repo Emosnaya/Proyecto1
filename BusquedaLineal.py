@@ -1,11 +1,8 @@
-#busqueda Binaria iterativa
-#Para redondear un número al entero anterior o posterior, 
-#se pueden utilizar las funciones floor() y ceil(), 
-#que están incluidas en la biblioteca math. 
-#Estas funciones sólo admiten un argumento 
-#(el número o el cálculo a redondear) y devuelven valores enteros.
+
 import math
 from random import randint
+import time
+from unittest import result
 
 
 def busquedaLineal(A,n,x):
@@ -17,7 +14,15 @@ def busquedaLineal(A,n,x):
 
 
 A = []
-for i in range(500):
-    A.append(randint(-1000,1001))
-
-print(busquedaLineal(A,499,20))
+for i in range(250000):
+    A.append(randint(-1000,1000))
+	
+x=-20
+start = time.time()
+resultado = busquedaLineal(A,len(A)-1,x)
+end = time.time()
+if(resultado == -1):
+	print(f'No se encontro el valor {x} en el arreglo')
+else:
+	print(f'Se encontro el valor {x} en la posicion {resultado}')
+	print(f'el tamanio del arreglo es de {len(A)} y el tiempo de ejecucion fue {end-start}')

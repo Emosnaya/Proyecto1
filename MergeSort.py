@@ -1,6 +1,6 @@
 import random
 from random import randint
-import numpy as np
+import time
 
 def crearSubArreglo(A, indIzq, indDer):
 	return A[indIzq:indDer+1]
@@ -25,10 +25,11 @@ def MergeSort(A,p,r):
 		Merge(A,p,q,r)
 
 A = []
-for i in range(200):
-    A.append(randint(-1000,1001))
+for i in range(250000):
+    A.append(randint(-1000,1000))
 
-print(A)
-MergeSort(A,0,199)
+start = time.time()
+MergeSort(A,0,len(A)-1)
+end = time.time()
 print("Arreglo Ordenado")
-print(A)
+print(f'El tiempo de ejecucion es {end-start}')

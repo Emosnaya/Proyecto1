@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 # Counting sort (Código Original) 
 def CreaLista(k): #Esta función crea una lista de apoyo
@@ -23,7 +24,7 @@ def CountingSort(A,k): # A es la lista y k es el valor máximo de la lista
     
 #A=[9,-1,21,4,0,-3,-2,40,10,35] #lista propuesta por la práctica
 A = []
-for i in range(200):
+for i in range(250000):
     A.append(randint(-1000,1001))
 N=[]
 P=[]
@@ -33,7 +34,7 @@ for i in range (0,len(A)):
         N.append(A[i]*-1)
     else:
         P.append(A[i])
-        
+
 if (len(N)!=0):
     aux=[]
     aux= CountingSort(N,max(N)) #Se manda a llamar la función de ordenamiento
@@ -46,5 +47,5 @@ if (len(P)!=0):
     for i in range (0,len(aux)):
         LO.append(aux[i])
     
-print("Lista Ordenada", LO) #Se Imprime la lista original
-print("Lista Original", A) #Se Imprime la lista original
+
+print(f'El tiempo de ejecucion es {end-start}')

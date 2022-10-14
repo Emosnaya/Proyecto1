@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 def intercambia(A,x,y):
     tmp=A[x]
@@ -21,8 +22,12 @@ def Quicksort(A,p,r):
 
 
 A = []
-for i in range(200):
-    A.append(randint(-1000,1001))
-Quicksort(A,0,len(A)-1) 
+for i in range(250000):
+    A.append(randint(-1000,1000))
+
+
+start = time.time()
+Quicksort(A,0,len(A)-1)
+end = time.time()
 print("Arreglo ordenado")
-print(A)
+print(f'El tiempo de ejecucion es {end-start} {len(A)}')
